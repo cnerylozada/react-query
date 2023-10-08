@@ -1,15 +1,23 @@
 import { useQuery } from "react-query";
 import { getSuperHeroes } from "../services/superheroes";
+import { ISuperHeroe } from "../models";
 
 export const SuperHeroes = () => {
-  const { data, isLoading, isError, error, refetch, isFetching } = useQuery(
-    "getSuperHeroes",
-    getSuperHeroes,
-    {
-      retry: false,
-      enabled: false,
-    }
-  );
+  const onSuccess = (data: ISuperHeroe[]) => {
+    console.log("Perform side effect after data fetching", data);
+  };
+  const onError = (error: any) => {
+    console.log("Perform side effect after encountering error", error);
+  };
+
+  const { data, isLoading, isError, error, refetch, isFetching } = useQuery<
+    ISuperHeroe[]
+  >("getSuperHeroes", getSuperHeroes, {
+    retry: false,
+    enabled: false,
+    onSuccess,
+    onError,
+  });
 
   return (
     <div>
