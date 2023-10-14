@@ -1,5 +1,5 @@
-export interface ISuperHeroe {
-  id: string;
+export interface ISuperHero {
+  id: number;
   name: string;
   alterEgo: string;
 }

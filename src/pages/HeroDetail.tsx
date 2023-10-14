@@ -1,14 +1,9 @@
-import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { getSuperHeroeById } from "../services/superheroes";
-import { ISuperHeroe } from "../models";
+import { useGetHeroById } from "../hooks";
 
 export const HeroDetailPage = () => {
   const { heroId } = useParams();
-  const { data, isLoading } = useQuery<ISuperHeroe>(
-    ["getSuperHeroeById", heroId],
-    () => getSuperHeroeById(`${heroId}`)
-  );
+  const { data, isLoading } = useGetHeroById(heroId as string);
 
   return (
     <div>

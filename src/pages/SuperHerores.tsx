@@ -1,10 +1,10 @@
 import { useQuery } from "react-query";
 import { getSuperHeroes } from "../services/superheroes";
-import { ISuperHeroe } from "../models";
+import { ISuperHero } from "../models";
 import { Link } from "react-router-dom";
 
 export const SuperHeroesPage = () => {
-  const onSuccess = (data: ISuperHeroe[]) => {
+  const onSuccess = (data: ISuperHero[]) => {
     console.log("Perform side effect after data fetching", data);
   };
   const onError = (error: any) => {
@@ -12,7 +12,7 @@ export const SuperHeroesPage = () => {
   };
 
   const { data, isLoading, isError, error, refetch, isFetching } = useQuery<
-    ISuperHeroe[]
+    ISuperHero[]
   >("getSuperHeroes", getSuperHeroes, {
     retry: false,
     enabled: false,
