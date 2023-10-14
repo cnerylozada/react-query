@@ -1,8 +1,8 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { Root } from "./pages/Root";
 import { Home } from "./pages/Home";
-import { SuperHeroes } from "./pages/SuperHerores";
-import { RQSuperHeroes } from "./pages/RQSuperHeroes";
+import { SuperHeroesPage } from "./pages/SuperHerores";
+import { HeroDetailPage } from "./pages/HeroDetail";
 
 export const router = createBrowserRouter([
   {
@@ -19,11 +19,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/super-heroes",
-        element: <SuperHeroes />,
+        element: <SuperHeroesPage />,
       },
       {
-        path: "/rq-super-heroes",
-        element: <RQSuperHeroes />,
+        path: "/super-heroes/:heroId",
+        element: <HeroDetailPage />,
       },
     ],
   },

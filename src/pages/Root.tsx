@@ -10,9 +10,6 @@ export const Root = () => {
         <div>
           <Link to={"super-heroes"}>Super heroes</Link>
         </div>
-        <div>
-          <Link to={"rq-super-heroes"}>RQ Super heroes</Link>
-        </div>
       </div>
       <div>
         <Outlet />

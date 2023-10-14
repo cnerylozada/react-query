@@ -1,8 +1,9 @@
 import { useQuery } from "react-query";
 import { getSuperHeroes } from "../services/superheroes";
 import { ISuperHeroe } from "../models";
+import { Link } from "react-router-dom";
 
-export const SuperHeroes = () => {
+export const SuperHeroesPage = () => {
   const onSuccess = (data: ISuperHeroe[]) => {
     console.log("Perform side effect after data fetching", data);
   };
@@ -36,7 +37,10 @@ export const SuperHeroes = () => {
           <div>
             {data.map((_) => (
               <div key={_.id}>
-                id: {_.id} Name: {_.name} Alter ego: {_.alterEgo}
+                <div>
+                  id: {_.id} Name: {_.name} Alter ego: {_.alterEgo}
+                </div>
+                <Link to={`/super-heroes/${_.id}`}>Go to detail</Link>
               </div>
             ))}
           </div>
