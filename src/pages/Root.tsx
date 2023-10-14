@@ -5,10 +5,13 @@ export const Root = () => {
     <div>
       <div>
         <div>
-          <Link to={"home"}>Home</Link>
+          <Link to={"/home"}>Home</Link>
         </div>
         <div>
-          <Link to={"super-heroes"}>Super heroes</Link>
+          <Link to={"/super-heroes"}>Super heroes</Link>
+        </div>
+        <div>
+          <Link to={"/dependent-queries"}>Dependent queries</Link>
         </div>
       </div>
       <div>

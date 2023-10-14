@@ -1,8 +1,9 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { Root } from "./pages/Root";
-import { Home } from "./pages/Home";
+import { HomePage } from "./pages/Home";
 import { SuperHeroesPage } from "./pages/SuperHerores";
 import { HeroDetailPage } from "./pages/HeroDetail";
+import { DependendQueriesPage } from "./pages/DependentQueries";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/home",
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: "/super-heroes",
@@ -25,6 +26,7 @@ export const router = createBrowserRouter([
         path: "/super-heroes/:heroId",
         element: <HeroDetailPage />,
       },
+      { path: "/dependent-queries", element: <DependendQueriesPage /> },
     ],
   },
 ]);
