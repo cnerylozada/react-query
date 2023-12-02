@@ -4,6 +4,7 @@ import { HomePage } from "./pages/Home";
 import { SuperHeroesPage } from "./pages/SuperHerores";
 import { HeroDetailPage } from "./pages/HeroDetail";
 import { DependendQueriesPage } from "./pages/DependentQueries";
+import { ProductsRoot } from "./pages/ProductsRoot";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,29 @@ export const router = createBrowserRouter([
         element: <HeroDetailPage />,
       },
       { path: "/dependent-queries", element: <DependendQueriesPage /> },
+      {
+        path: "/products",
+        element: <ProductsRoot />,
+        children: [
+          { index: true, element: <div>Welcome to products section</div> },
+          {
+            path: "featured",
+            element: (
+              <div>
+                <div>Products Featured</div>
+              </div>
+            ),
+          },
+          {
+            path: "new",
+            element: (
+              <div>
+                <div>Products New</div>
+              </div>
+            ),
+          },
+        ],
+      },
     ],
   },
 ]);
