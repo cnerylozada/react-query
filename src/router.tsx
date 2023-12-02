@@ -5,6 +5,7 @@ import { SuperHeroesPage } from "./pages/SuperHerores";
 import { HeroDetailPage } from "./pages/HeroDetail";
 import { DependendQueriesPage } from "./pages/DependentQueries";
 import { ProductsRoot } from "./pages/ProductsRoot";
+import { ProductsFeatured } from "./pages/ProductsFeatured";
 
 export const router = createBrowserRouter([
   {
@@ -35,11 +36,7 @@ export const router = createBrowserRouter([
           { index: true, element: <div>Welcome to products section</div> },
           {
             path: "featured",
-            element: (
-              <div>
-                <div>Products Featured</div>
-              </div>
-            ),
+            element: <ProductsFeatured />,
           },
           {
             path: "new",
