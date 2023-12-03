@@ -1,6 +1,8 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 export const Root = () => {
+  const activeStyles = (isActive: boolean) => (isActive ? "text-blue-500" : "");
+
   return (
     <div>
       <div
@@ -8,16 +10,44 @@ export const Root = () => {
         border-b bg-blue-50"
       >
         <div>
-          <Link to={"/home"}>Home</Link>
+          <NavLink
+            to={"/home"}
+            className={({ isActive }) => activeStyles(isActive)}
+          >
+            Home
+          </NavLink>
         </div>
         <div>
-          <Link to={"/super-heroes"}>Super heroes</Link>
+          <NavLink
+            to={"/super-heroes"}
+            className={({ isActive }) => activeStyles(isActive)}
+          >
+            Super heroes
+          </NavLink>
         </div>
         <div>
-          <Link to={"/dependent-queries"}>Dependent queries</Link>
+          <NavLink
+            to={"/colors"}
+            className={({ isActive }) => activeStyles(isActive)}
+          >
+            Colors
+          </NavLink>
         </div>
         <div>
-          <Link to={"/products"}>Nested Products</Link>
+          <NavLink
+            to={"/dependent-queries"}
+            className={({ isActive }) => activeStyles(isActive)}
+          >
+            Dependent queries
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            to={"/products"}
+            className={({ isActive }) => activeStyles(isActive)}
+          >
+            Nested Products
+          </NavLink>
         </div>
       </div>
       <div>

@@ -6,6 +6,8 @@ import { HeroDetailPage } from "./pages/HeroDetail";
 import { DependendQueriesPage } from "./pages/DependentQueries";
 import { ProductsRoot } from "./pages/ProductsRoot";
 import { ProductsFeatured } from "./pages/ProductsFeatured";
+import { ColorsPage } from "./pages/Colors";
+import { ColorDetail } from "./pages/ColorDetail";
 
 export const router = createBrowserRouter([
   {
@@ -14,23 +16,31 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="home" />,
+        element: <Navigate to="/home" />,
       },
       {
-        path: "/home",
+        path: "home",
         element: <HomePage />,
       },
       {
-        path: "/super-heroes",
+        path: "colors",
+        element: <ColorsPage />,
+      },
+      {
+        path: "colors/:colorId",
+        element: <ColorDetail />,
+      },
+      {
+        path: "super-heroes",
         element: <SuperHeroesPage />,
       },
       {
-        path: "/super-heroes/:heroId",
+        path: "super-heroes/:heroId",
         element: <HeroDetailPage />,
       },
-      { path: "/dependent-queries", element: <DependendQueriesPage /> },
+      { path: "dependent-queries", element: <DependendQueriesPage /> },
       {
-        path: "/products",
+        path: "products",
         element: <ProductsRoot />,
         children: [
           { index: true, element: <div>Welcome to products section</div> },
