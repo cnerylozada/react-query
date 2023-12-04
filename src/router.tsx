@@ -8,6 +8,7 @@ import { ProductsRoot } from "./pages/ProductsRoot";
 import { ProductsFeatured } from "./pages/ProductsFeatured";
 import { ColorsPage } from "./pages/Colors";
 import { ColorDetail } from "./pages/ColorDetail";
+import { LazyFriendsPage } from "./pages/LazyFriends";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,7 @@ export const router = createBrowserRouter([
         element: <HeroDetailPage />,
       },
       { path: "dependent-queries", element: <DependendQueriesPage /> },
+      { path: "lazy-friends", element: <LazyFriendsPage /> },
       {
         path: "products",
         element: <ProductsRoot />,

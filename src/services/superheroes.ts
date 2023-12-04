@@ -1,14 +1,13 @@
 import axios from "axios";
 import { ISuperHero } from "../models";
-
-const apiUrl = "http://localhost:4000/superheroes";
+import { apiURL } from "./config";
 
 export const getSuperHeroes = async () => {
-  const { data } = await axios.get(apiUrl);
+  const { data } = await axios.get(`${apiURL}/superheroes`);
   return data as ISuperHero[];
 };
 
 export const getSuperHeroeById = async (id: string) => {
-  const { data } = await axios.get(`${apiUrl}/${id}`);
+  const { data } = await axios.get(`${apiURL}/superheroes/${id}`);
   return data as ISuperHero;
 };

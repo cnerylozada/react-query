@@ -43,6 +43,14 @@ export const Root = () => {
         </div>
         <div>
           <NavLink
+            to={"/lazy-friends"}
+            className={({ isActive }) => activeStyles(isActive)}
+          >
+            Lazy Friends
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
             to={"/products"}
             className={({ isActive }) => activeStyles(isActive)}
           >
