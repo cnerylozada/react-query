@@ -14,7 +14,7 @@ export const SuperHeroesPage = () => {
   const { data, isLoading, isError, error, refetch, isFetching } = useQuery<
     ISuperHero[]
   >("getSuperHeroes", getSuperHeroes, {
-    retry: false,
+    retry: 2,
     enabled: false,
     onSuccess,
     onError,
@@ -31,7 +31,8 @@ export const SuperHeroesPage = () => {
         Refetch
       </button>
       <div>
-        {(isLoading || isFetching) && <div>Loading ...</div>}
+        {isLoading && <div>Loading ...</div>}
+        {isFetching && <div>Fetching ...</div>}
         {isError && <div>{(error as any).message}</div>}
         {data?.length && (
           <div>

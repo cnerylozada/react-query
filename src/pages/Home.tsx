@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { getSuperHeroes } from "../services/superheroes";
 
 export const HomePage = () => {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isFetching } = useQuery({
     queryKey: ["super-heroes"],
     queryFn: getSuperHeroes,
   });
@@ -10,6 +10,7 @@ export const HomePage = () => {
     <div>
       <div>Welcome to Home page</div>
       {isLoading && <div>Loading ...</div>}
+      {isFetching && <div>Fetching ...</div>}
       <div>
         {data?.map((_) => (
           <div key={_.id}>{_.name}</div>
